@@ -54,8 +54,8 @@ The Logic Bomb in Program.cs
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/aashraymt/Evo-Fuzz.git](https://github.com/aashraymt/Evo-Fuzz.git)
-cd EvoRedos
+git clone https://github.com/aashraymt/Evo-Fuzz.git
+cd Evo-Fuzz
 
 cd VulnerableAPI
 

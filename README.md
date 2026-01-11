@@ -1,8 +1,6 @@
 # Building an Evolutionary Fuzzer
 
-> *"What happens if I teach a Python script to 'evolve' malicious inputs until it breaks a C# API?"*
-
-That was the question I wanted to answer with this project. I've been reading about **Evolutionary Fuzzing** and Microsoft's **Variant Hunting** methodologies, so rather than just using tools like Burp Suite, I decided to build my own fuzzer from scratch to understand the logic behind it.
+The sole purpose of this project was to learn fuzzing by building one from scratch. I wanted to move beyond just running tools and actually understand the mechanics of mutation strategies and code coverage. I built a custom evolutionary engine in Python that applies genetic algorithms to "breed" malicious inputs, relying on response feedback (heuristics) to discover edge cases. This repo documents my experiments in breaking both a .NET Web API (logic bombs) and a Linux binary (buffer overflows) using nothing but my own code.
 
 ### The Experiment
 I created a lab environment 
@@ -28,7 +26,7 @@ I also implemented a **"Dictionary Mutation"** strategy. Pure evolution takes a 
 
 ---
 
-### 💥 The Crash
+### The Crash
 The fuzzer successfully identified the logic bomb (`data.Payload.Length == 42`) in Generation 0 by using a dictionary replacement strategy.
 
 Here is the actual Proof of Concept (PoC) it generated automatically:
@@ -45,8 +43,8 @@ It flagged the crash as "Unique" by hashing the stack trace, so I didn't get spa
 I simulated a "Critical Memory Failure" using an unhandled exception.
 ```csharp
 
-The Logic Bomb in Program.cs 
-if (data.Payload.Length == 42)
+The Logic Bomb in Program.cs
+//if (data.Payload.Length == 42)
 {
     throw new InvalidOperationException("CRITICAL MEMORY FAILURE: Buffer Edge Case Hit!");
 }

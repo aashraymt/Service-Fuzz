@@ -7,7 +7,7 @@ I created a lab environment
 1.  A C# .NET Core Web API that I intentionally engineered with a "Logic Bomb" (a hidden crash that only triggers if the input length is exactly 42 characters).
 2.  A Python script that doesn't just guess randomly—it uses **Genetic Algorithms**. It takes "parents" (inputs), mixes them (crossover), mutates them, and learns from the server's response.
 
-![Crash Proof]<img width="1887" height="608" alt="image" src="https://github.com/user-attachments/assets/4149df59-fde5-4964-9801-3a5a33483e39" />
+<img width="1318" height="741" alt="image" src="https://github.com/user-attachments/assets/40da68ba-ed99-4edf-a6f0-0fce4d16a8d6" />
 
 *The moment the fuzzer figured out the logic bomb. Left: Python finding the crash. Right: The C# server exploding.*
 

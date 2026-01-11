@@ -48,3 +48,25 @@ The Logic Bomb in Program.cs
 {
     throw new InvalidOperationException("CRITICAL MEMORY FAILURE: Buffer Edge Case Hit!");
 }
+
+```
+## ⚡ Quick Start
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/aashraymt/Evo-Fuzz.git](https://github.com/aashraymt/Evo-Fuzz.git)
+cd EvoRedos
+
+cd VulnerableAPI
+
+# Force generate the project files (if missing)
+dotnet new web --force
+
+# Start the server on port 5000
+dotnet run --urls "http://localhost:5000"
+cd ../Fuzzer
+
+# Run the evolutionary engine
+python3 fuzzer.py
+```
+I built this project purely for educational purposes and research. Only run this on your own local labs.
